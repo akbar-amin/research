@@ -1,5 +1,4 @@
-import os; os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
-import csv 
+import csv, os; os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 import tensorflow as tf
 from DGMnet import DGM, Minibatches
 
@@ -39,7 +38,7 @@ def AdamLearningSchedule(iteration):
 
     return LR 
 
-#TODO: Fix shape issue for higher dimensions
+
 def train(model, generator, optimizer, iterations, steps):
     """ Trains the DGM model based on the procedure described in [2].
 
@@ -132,9 +131,9 @@ def train(model, generator, optimizer, iterations, steps):
 
 
 generator = Minibatches(
-    nBoundary = 20000, 
-    nTerminal = 2000, 
-    dimensions = 2, 
+    nBoundary = 5000, 
+    nTerminal = 750, 
+    dimensions = 20, 
     T_bounds = [1e-10, T], 
     X_bounds = [1e-10, X0 * 2.5]
 )
@@ -144,13 +143,13 @@ optimizer = tf.optimizers.Adam(AdamLearningSchedule(0))
 model = DGM(
     hidden = 3, 
     units = 50, 
-    dimensions = 2, 
+    dimensions = 20, 
     active1 = "tanh", 
     active2 = "tanh", 
     active3 = "linear"
 )
 
-train(model = model, generator = generator, optimizer = optimizer, iterations = 100000, steps = 15)
+train(model = model, generator = generator, optimizer = optimizer, iterations = 50000, steps = 12)
 
 
 # model = tf.keras.models.load_model(outfile, compile = False)  
