@@ -155,18 +155,3 @@ class DGM(tf.keras.Model):
         S_new = self.output_layer(S)          # and return the final output. 
         
         return S_new
-
-
-# generator = Minibatches(5000, 500, 20, [0, 1], [2, 3])
-# a, b, c, d = next(generator)
-# model = DGM(3, 50, 20, active1 = "tanh", active2 = "linear", active3 = "linear")
-
-# h = tf.Variable(tf.random.uniform(shape = (5000, 1)))
-# g = model([a, b])
-
-
-#print(tf.squeeze(g))
-#j = tf.expand_dims()
-# h = tf.squeeze(g)
-# print(h)
-#print((tf.transpose(g, perm = [1,0,2])))
