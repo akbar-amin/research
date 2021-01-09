@@ -21,8 +21,8 @@ class Minibatches:
                 within the given boundaries 
         """
         
-        self.nBoundary  = int(nBoundary/2)
-        self.nTerminal = int(nTerminal/2)
+        self.nBoundary  = nBoundary
+        self.nTerminal = nTerminal
         self.dimensions = dimensions
 
         self.T_min = T_bounds[0]
@@ -145,7 +145,7 @@ class DGM(tf.keras.Model):
             and the resulting tensor (S_new) is returned. 
         """
 
-        C = tf.concat(inputs, axis = 0)
+        C = tf.stack(inputs, axis = 0)  
     
         S = self.input_layer(C)               # Get the initial "output", and then...
 
