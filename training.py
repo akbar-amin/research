@@ -131,9 +131,9 @@ def train(model, generator, optimizer, iterations, steps):
 
 
 generator = Minibatches(
-    nBoundary = 5000, 
-    nTerminal = 750, 
-    dimensions = 20, 
+    nBoundary = 2500, 
+    nTerminal = 500, 
+    dimensions = 8, 
     T_bounds = [1e-10, T], 
     X_bounds = [1e-10, X0 * 2.5]
 )
@@ -143,13 +143,13 @@ optimizer = tf.optimizers.Adam(AdamLearningSchedule(0))
 model = DGM(
     hidden = 3, 
     units = 50, 
-    dimensions = 20, 
+    dimensions = 8, 
     active1 = "tanh", 
     active2 = "tanh", 
     active3 = "linear"
 )
 
-train(model = model, generator = generator, optimizer = optimizer, iterations = 50000, steps = 12)
+train(model = model, generator = generator, optimizer = optimizer, iterations = 20000, steps = 7)
 
 
 # model = tf.keras.models.load_model(outfile, compile = False)  
