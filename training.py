@@ -16,7 +16,7 @@ X0 = 1        # spot price
 sigma = 0.55  # underlying volatility  
 r = 0         # risk-free interest rate
 
-outfile = "C:/Users/akbar/projects/models/DGM"  # for saving the model
+outfile = "/projects/models/DGM"  # for saving the model
 
 
 def AdamLearningSchedule(iteration):
@@ -39,6 +39,7 @@ def AdamLearningSchedule(iteration):
 
     return LR 
 
+#TODO: Fix shape issue for higher dimensions
 def train(model, generator, optimizer, iterations, steps):
     """ Trains the DGM model based on the procedure described in [2].
 
@@ -87,17 +88,12 @@ def train(model, generator, optimizer, iterations, steps):
                         V = model([t_boundary, x_boundary]) # DGM option value
                         P = model([t_terminal, x_terminal]) # DGM option payoff
                         
-
                     V_t = tapeD1.gradient(V, t_boundary)
                     V_x = tapeD1.gradient(V, x_boundary)
                     
-                V_xx = tapeD2.gradient(V_x, x_boundary)
-                #print(V_xx[1])
-
+                V_xx = tapeD2.gradient(V_x, x_boundary) 
                 V_diff = V_t + 0.5 * sigma**2 * x_boundary**2 * V_xx + r * x_boundary * V_x - r * V
-                # a = tf.expand_dims(V_diff, 1)
-                # b = tf.expand_dims(V, 1)
-                # print(a - b)
+
                 P_boundary = tf.nn.relu(K - x_boundary)
                 L1 = tf.reduce_mean(tf.square(V_diff * (V - P_boundary)))
 
