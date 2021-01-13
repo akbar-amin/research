@@ -1,5 +1,5 @@
 ## Deep Galerkin Method (DGM)
-Pseudo-implementations of the DGM Neural Network in TensorFlow and PyTorch. 
+Pseudo-implementations of the DGM Neural Network in PyTorch and Tensorflow (the PyTorch version is much more polished and legitimate). 
 
 TODO: Finish write-up
 
