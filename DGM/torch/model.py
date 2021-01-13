@@ -86,7 +86,7 @@ def minibatch(N, dim):
 
     batch = torch.Tensor([])
     while batch.size()[0] < N:
-        sample = 2 * torch.rand(N, 2) - 1
+        sample = 2 * torch.rand(N, dim) - 1
         idx = torch.where(norm(sample, dim = 1) < 1)
         sample = sample[idx]
         batch = torch.cat([batch, sample])
