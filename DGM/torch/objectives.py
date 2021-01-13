@@ -51,9 +51,6 @@ class Objective:
 
         self.records.append(results)
 
-        if epoch % 25 == 0:
-            print({k:round(results[k], 4) for k in results})
-
         return total
 
     def forward(self, inputs):
@@ -120,6 +117,12 @@ class Objective:
         error = torch.sqrt(torch.sum((predict - exact)**2))/torch.sqrt(torch.sum(exact)**2)
 
         return error 
+
+    def verbose(self):
+
+        item = self.records[-1]
+        print(f"Epoch: {item['epoch']:<5} | Error: {item['error']:<6.5f}  | Loss: {item['loss']:<6.5f} ")
+
 
     def save(self, path):
         
