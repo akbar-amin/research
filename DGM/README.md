@@ -1,7 +1,16 @@
-## Deep Galerkin Method (DGM)
-Pseudo-implementations of the DGM Neural Network in PyTorch and Tensorflow (the PyTorch version is much more polished and legitimate). 
+Pseudo-implementations of the DGM Neural Network in PyTorch and Tensorflow. 
 
-TODO: Finish write-up
+## Deep Galerkin Method (DGM)
+
+The idea behind DGM is to solve high-dimensional partial differential equations (PDEs) without getting tangled in mesh. 
+
+DGM takes advantage of minibatch sampling, where time-space are randomly sampled within a function's domain. By processing small minibatches sequentially, the network can learn some differential function and avoid the computational bottleneck present with grid-based methods when trying to solve high-dimensional PDEs
+
+The neural network architecture used is similar to a highway or long-term short-term (LSTM) network, where an input and some recurrent connection are run through a stack of layers containing multiple gates, which are triggered by a pair of nonlinear activations.
+
+### Motivation
+
+Placeholder
 
 ### References
 
