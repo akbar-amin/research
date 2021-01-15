@@ -1,6 +1,6 @@
 ## Federated Stochastic Gradient Descent (SGD) 
 
-Implementations of Federated Average (FedAvg) and Federated Accelerated (FedAc) Stochastic Gradient Descent. 
+An implementation of Federated Accelerated (FedAc) Stochastic Gradient Descent. 
 
 TODO: Finish Average SGD and write-up
 
