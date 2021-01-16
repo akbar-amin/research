@@ -1,0 +1,148 @@
+from algorithm import FedAc
+
+
+""" FedAc-2 """
+model = FedAc("SUSY.bz2","data/fedac2.hdf5")
+
+model.train(2, "SUSY_decay_1e-2", .001, .01, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_decay_2e-2", .001, .02, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_decay_3e-2", .001, .03, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_decay_4e-2", .001, .04, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_decay_5e-2", .001, .05, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_decay_6e-2", .001, .06, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_decay_7e-2", .001, .07, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_decay_8e-2", .001, .08, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_decay_9e-2", .001, .09, 1, 1, 1, 4096, 512)
+
+model.train(2, "SUSY_eta_1e-5", .00001, .01, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_eta_5e-5", .00005, .01, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_eta_1e-4", .0001, .01, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_eta_5e-4", .0005, .01, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_eta_1e-3", .001, .01, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_eta_5e-3", .005, .01, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_eta_1e-2", .01, .01, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_eta_5e-2", .05, .01, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_eta_1e-1", .1, .01, 1, 1, 1, 4096, 512)
+model.train(2, "SUSY_eta_5e-1", .5, .01, 1, 1, 1, 4096, 512)
+
+model.train(2, "SUSY_M2_T1", .001, .01, 1, 2, 1, 4096, 512)
+model.train(2, "SUSY_M2_T4", .001, .01, 1, 2, 4, 4096, 512)
+model.train(2, "SUSY_M2_T8", .001, .01, 1, 2, 8, 4096, 512)
+model.train(2, "SUSY_M2_T16", .001, .01, 1, 2, 16, 4096, 512)
+model.train(2, "SUSY_M2_T32", .001, .01, 1, 2, 32, 4096, 512)
+
+model.train(2, "SUSY_M2_B4", .001, .01, 4, 2, 1, 4096, 512)
+model.train(2, "SUSY_M2_B8", .001, .01, 8, 2, 1, 4096, 512)
+model.train(2, "SUSY_M2_B16", .001, .01, 16, 2, 1, 4096, 512)
+model.train(2, "SUSY_M2_B32", .001, .01, 32, 2, 1, 4096, 512)
+model.train(2, "SUSY_M2_B64", .001, .01, 64, 2, 1, 4096, 512)
+
+model.train(2, "SUSY_M4_T1", .001, .01, 1, 4, 1, 4096, 512)
+model.train(2, "SUSY_M4_T4", .001, .01, 1, 4, 4, 4096, 512)
+model.train(2, "SUSY_M4_T8", .001, .01, 1, 4, 8, 4096, 512)
+model.train(2, "SUSY_M4_T16", .001, .01, 1, 4, 16, 4096, 512)
+model.train(2, "SUSY_M4_T32", .001, .01, 1, 4, 32, 4096, 512)
+
+model.train(2, "SUSY_M4_B4", .001, .01, 4, 4, 1, 4096, 512)
+model.train(2, "SUSY_M4_B8", .001, .01, 8, 4, 1, 4096, 512)
+model.train(2, "SUSY_M4_B16", .001, .01, 16, 4, 1, 4096, 512)
+model.train(2, "SUSY_M4_B32", .001, .01, 32, 4, 1, 4096, 512)
+model.train(2, "SUSY_M4_B64", .001, .01, 64, 4, 1, 4096, 512)
+
+
+""" FedAc-I """
+model = FedAc("SUSY.bz2","data/fedac1.hdf5")
+
+model.train(1, "SUSY_decay_1e-2", .001, .01, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_decay_2e-2", .001, .02, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_decay_3e-2", .001, .03, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_decay_4e-2", .001, .04, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_decay_5e-2", .001, .05, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_decay_6e-2", .001, .06, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_decay_7e-2", .001, .07, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_decay_8e-2", .001, .08, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_decay_9e-2", .001, .09, 1, 1, 1, 4096, 512)
+
+model.train(1, "SUSY_eta_1e-5", .00001, .01, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_eta_5e-5", .00005, .01, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_eta_1e-4", .0001, .01, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_eta_5e-4", .0005, .01, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_eta_1e-3", .001, .01, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_eta_5e-3", .005, .01, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_eta_1e-2", .01, .01, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_eta_5e-2", .05, .01, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_eta_1e-1", .1, .01, 1, 1, 1, 4096, 512)
+model.train(1, "SUSY_eta_5e-1", .5, .01, 1, 1, 1, 4096, 512)
+
+model.train(1, "SUSY_M2_T1", .001, .01, 1, 2, 1, 4096, 512)
+model.train(1, "SUSY_M2_T4", .001, .01, 1, 2, 4, 4096, 512)
+model.train(1, "SUSY_M2_T8", .001, .01, 1, 2, 8, 4096, 512)
+model.train(1, "SUSY_M2_T16", .001, .01, 1, 2, 16, 4096, 512)
+model.train(1, "SUSY_M2_T32", .001, .01, 1, 2, 32, 4096, 512)
+
+model.train(1, "SUSY_M2_B4", .001, .01, 4, 2, 1, 4096, 512)
+model.train(1, "SUSY_M2_B8", .001, .01, 8, 2, 1, 4096, 512)
+model.train(1, "SUSY_M2_B16", .001, .01, 16, 2, 1, 4096, 512)
+model.train(1, "SUSY_M2_B32", .001, .01, 32, 2, 1, 4096, 512)
+model.train(1, "SUSY_M2_B64", .001, .01, 64, 2, 1, 4096, 512)
+
+model.train(1, "SUSY_M4_T1", .001, .01, 1, 4, 1, 4096, 512)
+model.train(1, "SUSY_M4_T4", .001, .01, 1, 4, 4, 4096, 512)
+model.train(1, "SUSY_M4_T8", .001, .01, 1, 4, 8, 4096, 512)
+model.train(1, "SUSY_M4_T16", .001, .01, 1, 4, 16, 4096, 512)
+model.train(1, "SUSY_M4_T32", .001, .01, 1, 4, 32, 4096, 512)
+
+model.train(1, "SUSY_M4_B4", .001, .01, 4, 4, 1, 4096, 512)
+model.train(1, "SUSY_M4_B8", .001, .01, 8, 4, 1, 4096, 512)
+model.train(1, "SUSY_M4_B16", .001, .01, 16, 4, 1, 4096, 512)
+model.train(1, "SUSY_M4_B32", .001, .01, 32, 4, 1, 4096, 512)
+model.train(1, "SUSY_M4_B64", .001, .01, 64, 4, 1, 4096, 512)
+
+
+""" FedAc Naive """
+model = FedAc("SUSY.bz2","data/fedac0.hdf5")
+
+model.train(0, "SUSY_decay_1e-2", .001, .01, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_decay_2e-2", .001, .02, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_decay_3e-2", .001, .03, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_decay_4e-2", .001, .04, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_decay_5e-2", .001, .05, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_decay_6e-2", .001, .06, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_decay_7e-2", .001, .07, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_decay_8e-2", .001, .08, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_decay_9e-2", .001, .09, 1, 1, 1, 4096, 512)
+
+model.train(0, "SUSY_eta_1e-5", .00001, .01, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_eta_5e-5", .00005, .01, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_eta_1e-4", .0001, .01, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_eta_5e-4", .0005, .01, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_eta_1e-3", .001, .01, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_eta_5e-3", .005, .01, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_eta_1e-2", .01, .01, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_eta_5e-2", .05, .01, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_eta_1e-1", .1, .01, 1, 1, 1, 4096, 512)
+model.train(0, "SUSY_eta_5e-1", .5, .01, 1, 1, 1, 4096, 512)
+
+model.train(0, "SUSY_M2_T1", .001, .01, 1, 2, 1, 4096, 512)
+model.train(0, "SUSY_M2_T4", .001, .01, 1, 2, 4, 4096, 512)
+model.train(0, "SUSY_M2_T8", .001, .01, 1, 2, 8, 4096, 512)
+model.train(0, "SUSY_M2_T16", .001, .01, 1, 2, 16, 4096, 512)
+model.train(0, "SUSY_M2_T32", .001, .01, 1, 2, 32, 4096, 512)
+
+model.train(0, "SUSY_M2_B4", .001, .01, 4, 2, 1, 4096, 512)
+model.train(0, "SUSY_M2_B8", .001, .01, 8, 2, 1, 4096, 512)
+model.train(0, "SUSY_M2_B16", .001, .01, 16, 2, 1, 4096, 512)
+model.train(0, "SUSY_M2_B32", .001, .01, 32, 2, 1, 4096, 512)
+model.train(0, "SUSY_M2_B64", .001, .01, 64, 2, 1, 4096, 512)
+
+model.train(0, "SUSY_M4_T1", .001, .01, 1, 4, 1, 4096, 512)
+model.train(0, "SUSY_M4_T4", .001, .01, 1, 4, 4, 4096, 512)
+model.train(0, "SUSY_M4_T8", .001, .01, 1, 4, 8, 4096, 512)
+model.train(0, "SUSY_M4_T16", .001, .01, 1, 4, 16, 4096, 512)
+model.train(0, "SUSY_M4_T32", .001, .01, 1, 4, 32, 4096, 512)
+
+model.train(0, "SUSY_M4_B4", .001, .01, 4, 4, 1, 4096, 512)
+model.train(0, "SUSY_M4_B8", .001, .01, 8, 4, 1, 4096, 512)
+model.train(0, "SUSY_M4_B16", .001, .01, 16, 4, 1, 4096, 512)
+model.train(0, "SUSY_M4_B32", .001, .01, 32, 4, 1, 4096, 512)
+model.train(0, "SUSY_M4_B64", .001, .01, 64, 4, 1, 4096, 512)
