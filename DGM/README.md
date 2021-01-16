@@ -6,13 +6,13 @@ Implementations of DGM are done in PyTorch and Tensorflow, although only the PyT
 ## Directory
 
 * PyTorch 
-  * [Source](https://github.com/akbar-amin/DNN-Research/blob/main/DGM/torch): code for the model, objective functions (losses), and training loop 
-  * [Notebooks](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/results): Jupyter notebooks for visualizing experiment results and some examples of the model in use
-  * [Visuals](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/results/visuals): individual metric plots from experiments
-  * [Data](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/data): raw metric data by epoch
+  * [Source](https://github.com/akbar-amin/DNN-Research/blob/main/DGM/torch) - code for the model, objective functions (losses), and training loop 
+  * [Notebooks](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/results) - Jupyter notebooks for visualizing experiment results and some examples of the model in use
+  * [Visuals](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/results/visuals) - individual metric plots from experiments
+  * [Data](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/data) - raw data by epoch from experiments
 
 * Tensorflow
-  * [Source](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/tensorflow): code for all of the model's assets and an attempt at a training loop 
+  * [Source](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/tensorflow) - code for all of the model's assets and an attempt at a training loop 
 
 * Writeup [TODO]
     
