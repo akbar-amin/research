@@ -1,6 +1,6 @@
 ## Federated Stochastic Gradient Descent (SGD) 
 
-Experiments with the Federated Accelerated SGD algorithm (FedAc), which is built on the principles of the Federated Average SGD algorithm (FedAvg). FedAc was published fairly recently [1] and sparked my interest when looking into optimized federated learning with deep neural networks. 
+Experiments with Federated Accelerated SGD (FedAc), an algorithm built on the principles of Federated Average SGD (FedAvg). FedAc was published fairly recently [1] and sparked my interest when looking into optimized federated learning with deep neural networks. 
 
 ### References
 
