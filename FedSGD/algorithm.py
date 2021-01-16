@@ -1,6 +1,6 @@
 #pylint: disable = unbalanced-tuple-unpacking
 
-
+import time 
 import copy 
 import pathlib
 import numpy as np
@@ -21,7 +21,7 @@ class FedAc:
         
         self.store = pd.HDFStore(str(self.outdir / outfile))
 
-        self.X, self.Y = loadsvm((self.datadir / dataset).open("rb"))
+        self.X, self.Y = loadsvm(str(self.datadir / dataset))
         self.X = self.X.toarray()
         self.samples, self.features = self.X.shape 
 
@@ -56,7 +56,7 @@ class FedAc:
 
         return pool 
     
-    def run(self, record = 25, seed = 0):
+    def run(self, seed = 0):
         
         sequence = pd.Series([], dtype = pd.StringDtype())
         np.random.seed(seed)
@@ -70,7 +70,7 @@ class FedAc:
                 w_pool = self.broadcast(w_pool)
                 w_ag_pool = self.broadcast(w_ag_pool)
 
-                if count % record == 0:
+                if count % self.record == 0:
                     poploss = self.poploss(w_ag_pool[0, :])
                     sequence.at[count] = poploss 
                     print(f"Epoch: {count:<5}  | Loss: {poploss:.4f}")
@@ -83,9 +83,10 @@ class FedAc:
         return sequence
 
 
-    def train(self, version, key, eta, decay, batchsize, M, K, T, **kwargs):
+    def train(self, version, key, eta, decay, batchsize, M, K, T, record, **kwargs):
 
         self.batchsize = batchsize
+        self.record = record 
         self.version = version
         self.decay = decay 
         self.eta = eta
@@ -102,10 +103,14 @@ class FedAc:
         parameters.update(kwargs)
         parameters.update({"gamma": self.gamma, "alpha": self.alpha, "beta": self.beta, 
                             "method": self.version, "batchsize": self.batchsize, "eta": self.eta, 
-                            "decay": self.decay, "M": self.M, "K": self.K, "T": self.T})
+                            "decay": self.decay, "M": self.M, "K": self.K, "T": self.T, "record": self.record})
 
         print(parameters)
 
+        start = time.time()
         sequence = self.run(**kwargs)
+        stop = time.time() - start 
+
+        parameters.update({"runtime": stop})
         self.store.put(key, sequence)
         self.store.get_storer(key).attrs.metadata = parameters
