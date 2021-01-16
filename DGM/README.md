@@ -1,23 +1,28 @@
-Pseudo-implementations of the DGM Neural Network in PyTorch and Tensorflow. 
-
 ## Deep Galerkin Method (DGM)
+The purpose of this project was to gain a better understanding of deep neural networks (DNNs). Specifically, my goal is to use DNNs to solve high-dimensional partial differential equations (PDEs) as accurately as possible. While there are many networks that can do this, I decide to focus on the Deep Galerkin Method (DGM) as its architecture makes sense practically and the opportunities for experimentation seemed endless. 
 
-The idea behind DGM is to solve high-dimensional partial differential equations (PDEs) without getting tangled in mesh. 
+Implementations of DGM are done in PyTorch and Tensorflow, although only the PyTorch version is used for training and experiments. For me, PyTorch felt more comfortable to use than TensorFlow, but I may rewrite the TensorFlow version when I get more familiar with TensorFlow 2. Only the loss function differs between the two implementation (discussed further in the writeup). 
 
-DGM takes advantage of minibatch sampling, where time-space are randomly sampled within a function's domain. By processing small minibatches sequentially, the network can learn some differential function and avoid the computational bottleneck present with grid-based methods when trying to solve high-dimensional PDEs
+## Directory
 
-The neural network architecture used is similar to a highway or long-term short-term (LSTM) network, where an input and some recurrent connection are run through a stack of layers containing multiple gates, which are triggered by a pair of nonlinear activations.
+* PyTorch 
+  * [Source](https://github.com/akbar-amin/DNN-Research/blob/main/DGM/torch): code for the model, objective functions (losses), and training loop 
+  * [Notebooks](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/results): Jupyter notebooks for visualizing experiment results and some examples of the model in use
+  * [Visuals](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/results/visuals): individual metric plots from experiments
+  * [Data](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/data): raw metric data by epoch
 
-### Motivation
+* Tensorflow
+  * [Source](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/tensorflow): code for all of the model's assets and an attempt at a training loop 
 
-Placeholder
+* Writeup [TODO]
+    
+    Dissects the DGM neural network and attempts to explain relevant topics from scratch. 
 
-### References
+    As someone who does not have an extensive background in neural networks or machine learning, it gets frustrating when academic journals and reviews overcomplicate simple topics with technical terms and provide no background context. To me, it almost seems as if its done on purpose to avoid blatantly copying a source and making their paper seem "original". As a result, this writeup breaks away from such nomenclature and tries to explain topics in more generalized, layman terms. This not only helps solidify my own understanding, but it also makes the paper more appealing to the average reader. 
 
-1. Sirignano, J., Spiliopoulos, K., 2018. [DGM: A deep learning algorithm for solving partial differential equations](https://arxiv.org/pdf/1708.07469v5.pdf)
-2. Al-Aradi, A., et al., 2018. [Solving Nonlinear and High-Dimensional Partial Differential Equations via Deep Learning](https://arxiv.org/pdf/1811.08782.pdf)
-3. Chen, J., Du, R., Wu, K., 2020. [A Comparison Study of Deep Galerkin Method and Deep Ritz Method for Elliptic Problems with Different Boundary Conditions](https://arxiv.org/pdf/2005.04554.pdf)
 
-### Other
+## References 
 
-Testing and training was done on [Lambda Labs](https://lambdalabs.com/service/gpu-cloud) cloud GPU instances since my personal computer does not run very well. 
+1. [[1708.07469] DGM: A deep learning algorithm for solving partial differential equations](https://arxiv.org/abs/1708.07469)
+2. [[1811.08782] Solving Nonlinear and High-Dimensional Partial Differential Equations via Deep Learning](https://arxiv.org/abs/1811.08782)
+3. [[2005.04554] A comparison study of deep Galerkin method and deep Ritz method for elliptic problems with different boundary conditions](https://arxiv.org/abs/2005.04554)
