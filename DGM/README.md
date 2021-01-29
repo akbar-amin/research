@@ -14,13 +14,6 @@ Implementations of DGM are done in PyTorch and Tensorflow, although only the PyT
 * Tensorflow
   * [Source](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/tensorflow) - code for all of the model's assets and an attempt at a training loop 
 
-* Writeup [TODO]
-    
-    Dissects the DGM neural network and attempts to explain relevant topics from scratch. 
-
-    As someone who does not have an extensive background in neural networks or machine learning, it gets frustrating when academic journals and reviews overcomplicate simple topics with technical terms and provide no background context. To me, it almost seems as if its done on purpose to avoid blatantly copying a source and making their paper seem "original". As a result, this writeup breaks away from such nomenclature and tries to explain topics in more generalized, layman terms. This not only helps solidify my own understanding, but it also makes the paper more appealing to the average reader. 
-
-
 ## References 
 
 1. [[1708.07469] DGM: A deep learning algorithm for solving partial differential equations](https://arxiv.org/abs/1708.07469)
