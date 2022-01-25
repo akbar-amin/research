@@ -1,18 +1,7 @@
 ## Deep Galerkin Method (DGM)
-The purpose of this project was to gain a better understanding of deep neural networks (DNNs). Specifically, my goal is to use DNNs to solve high-dimensional partial differential equations (PDEs) as accurately as possible. While there are many networks that can do this, I decide to focus on the Deep Galerkin Method (DGM) as its architecture makes sense practically and the opportunities for experimentation seemed endless. 
+The purpose of this project was to gain a better understanding of deep neural networks (DNNs). Specifically, the goal was to use the Deep Galerkin Method (DGM) to solve high-dimensional partial differential equations (PDEs) as accurately as possible. 
 
-Implementations of DGM are done in PyTorch and Tensorflow, although only the PyTorch version is used for training and experiments. For me, PyTorch felt more comfortable to use than TensorFlow, but I may rewrite the TensorFlow version when I get more familiar with TensorFlow 2. Only the loss function differs between the two implementation (discussed further in the writeup). 
-
-## Directory
-
-* PyTorch 
-  * [Source](https://github.com/akbar-amin/DNN-Research/blob/main/DGM/torch) - code for the model, objective functions (losses), and training loop 
-  * [Notebooks](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/results) - Jupyter notebooks for visualizing experiment results and some examples of the model in use
-  * [Visuals](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/results/visuals) - individual metric plots from experiments
-  * [Data](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/data) - raw data by epoch from experiments
-
-* Tensorflow
-  * [Source](https://github.com/akbar-amin/DNN-Research/tree/main/DGM/tensorflow) - code for all of the model's assets and an attempt at a training loop 
+Implementations of DGM are done in PyTorch and Tensorflow, although only the PyTorch version is used for training and experiments. Only the loss function differs between the two. 
 
 ## References 
 
